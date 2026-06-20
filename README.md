@@ -40,7 +40,7 @@ Sigue estas instrucciones para levantar el entorno de desarrollo de manera local
 ### Paso 1: Clonar el Repositorio
 Abre tu terminal y ejecuta el comando de clonación:
 ```bash
-git clone [https://github.com/TU_USUARIO_GITHUB/foodstore.git](https://github.com/TU_USUARIO_GITHUB/foodstore.git)
+git clone [https://github.com/Blito-git/foodstore.git](https://github.com/Blito-git/foodstore.git)
 cd foodstore
 Paso 2: Configurar e Importar la Base de Datos
 
