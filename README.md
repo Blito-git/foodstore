@@ -18,9 +18,6 @@ Este sistema consiste en una aplicación de consola escrita en **Java 21** para 
 | :---       | :---     |
 | Nogueira   | Pablo    |
 | Tello      | Bruno    |
-| Cariaga    | Ignacio  |
-| Martinez   | Enzo     |
-| Palavecino | Leonardo |
 
 ---
 
