@@ -48,9 +48,9 @@ public class MenuUsuarios {
         u.setRol(consola.leerEnum("Asignar Rol", Rol.class));
         try {
             service.crear(u);
-            System.out.println("✅ Usuario registrado.");
+            System.out.println("Usuario registrado.");
         } catch (Exception e) {
-            System.out.println("❌ Error: Mail duplicado o datos corruptos.");
+            System.out.println("Error: Mail duplicado o datos corruptos.");
         }
     }
 
@@ -66,9 +66,9 @@ public class MenuUsuarios {
             u.setContrasena(consola.leerTexto("Nueva contraseña: "));
             u.setRol(consola.leerEnum("Nuevo Rol", Rol.class));
             service.actualizar(u);
-            System.out.println("✅ Ficha de usuario actualizada.");
+            System.out.println("Ficha de usuario actualizada.");
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 
@@ -77,9 +77,9 @@ public class MenuUsuarios {
         long id = consola.leerLong("ID de usuario a remover: ");
         try {
             service.eliminar(id);
-            System.out.println("✅ Usuario desactivado.");
+            System.out.println("Usuario desactivado.");
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 }

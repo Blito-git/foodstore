@@ -21,7 +21,7 @@ public class MenuPedidos {
             System.out.println("\n--- Módulo: Comandas y Pedidos ---");
             System.out.println("1. Listar Historial Activo");
             System.out.println("2. Inspeccionar Detalle de Pedido");
-            System.out.println("3. Confeccionar Nuevo Pedido (Transaccional)");
+            System.out.println("3. Confeccionar Nuevo Pedido");
             System.out.println("4. Cambiar Estado / Parámetros");
             System.out.println("5. Eliminar Pedido");
             System.out.println("0. Volver");
@@ -51,7 +51,7 @@ public class MenuPedidos {
             System.out.println("--- Desglose de Artículos ---");
             detalles.forEach(System.out::println);
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 
@@ -60,7 +60,7 @@ public class MenuPedidos {
         try {
             usrService.buscarPorId(usrId);
         } catch (Exception e) {
-            System.out.println("❌ El usuario no existe en la base.");
+            System.out.println(" El usuario no existe en la base.");
             return;
         }
 
@@ -78,22 +78,22 @@ public class MenuPedidos {
                 int cant = consola.leerEntero("Cantidad de unidades: ");
                 if (cant <= 0) { System.out.println("Cantidad inválida."); continue; }
                 p.addDetallePedido(prod, cant);
-                System.out.println("➕ Item cargado al carrito.");
+                System.out.println("Item cargado al carrito.");
             } catch (Exception e) {
-                System.out.println("❌ Producto inexistente o inactivo.");
+                System.out.println("Producto inexistente o inactivo.");
             }
         }
 
         if (p.getDetalles().isEmpty()) {
-            System.out.println("❌ Orden vacía. Transacción cancelada.");
+            System.out.println("Orden vacía. Transacción cancelada.");
             return;
         }
 
         try {
             service.crear(p);
-            System.out.printf("✅ Éxito. Comanda #%d confirmada. Importe Debitados: $%.2f%n", p.getId(), p.getTotal());
+            System.out.printf("Éxito. Comanda #%d confirmada. Importe Debitados: $%.2f%n", p.getId(), p.getTotal());
         } catch (Exception e) {
-            System.out.println("❌ Falla crítica de stock o integridad: " + e.getMessage());
+            System.out.println("Falla crítica de stock o integridad: " + e.getMessage());
         }
     }
 
@@ -105,9 +105,9 @@ public class MenuPedidos {
             p.setEstado(consola.leerEnum("Nuevo Estado de la Comanda", Estado.class));
             p.setFormaPago(consola.leerEnum("Actualizar método de pago", FormaPago.class));
             service.actualizar(p);
-            System.out.println("✅ Comanda re-encuadrada.");
+            System.out.println("Comanda re-encuadrada.");
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 
@@ -116,9 +116,9 @@ public class MenuPedidos {
         long id = consola.leerLong("ID de Pedido a anular: ");
         try {
             service.eliminar(id);
-            System.out.println("✅ Pedido anulado lógicamente.");
+            System.out.println("Pedido anulado lógicamente.");
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 }

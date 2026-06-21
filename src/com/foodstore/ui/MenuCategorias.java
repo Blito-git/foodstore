@@ -41,7 +41,7 @@ public class MenuCategorias {
         String nombre = consola.leerTexto("Nombre: ");
         String desc = consola.leerTextoOpcional("Descripción: ");
         service.crear(new Categoria(nombre, desc));
-        System.out.println("✅ Categoría almacenada con éxito.");
+        System.out.println("Categoría almacenada con éxito.");
     }
 
     private void editar() {
@@ -52,9 +52,9 @@ public class MenuCategorias {
             c.setNombre(consola.leerTexto("Nuevo nombre: "));
             c.setDescripcion(consola.leerTextoOpcional("Nueva descripción: "));
             service.actualizar(c);
-            System.out.println("✅ Cambios aplicados con éxito.");
+            System.out.println("Cambios aplicados con éxito.");
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 
@@ -63,9 +63,9 @@ public class MenuCategorias {
         long id = consola.leerLong("ID de categoría a eliminar: ");
         try {
             service.eliminar(id);
-            System.out.println("✅ Eliminación lógica realizada.");
+            System.out.println("Eliminación lógica realizada.");
         } catch (EntityNotFoundException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(" " + e.getMessage());
         }
     }
 }
