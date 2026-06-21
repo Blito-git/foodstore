@@ -11,8 +11,11 @@ public class ConexionDB {
 
     public static Connection obtenerConexion() {
         Properties props = new Properties();
-        try (InputStream is = ConexionDB.class.getClassLoader().getResourceAsStream("db.properties")) {
-            if (is == null) throw new RuntimeException("No se encontró db.properties en el classpath de recursos.");
+        
+        try (InputStream is = ConexionDB.class.getClassLoader().getResourceAsStream("resources/db.properties")) {
+            if (is == null) {
+                throw new RuntimeException("No se encontró db.properties en la ruta resources/ del classpath.");
+            }
             props.load(is);
         } catch (IOException e) {
             throw new RuntimeException("Error fatal al procesar db.properties: " + e.getMessage(), e);
