@@ -1,67 +1,63 @@
-# FoodStore
+# Food Store - Sistema de Gestión de Pedidos de Comida
 
-Trabajo Práctico Integrador (TPI) - **Universidad Tecnológica Nacional (UTN)**.
+Este proyecto es el Trabajo Práctico Integrador para la materia **Programación 2** de la carrera **Tecnicatura Universitaria en Programación (UTN)**. Consiste en una aplicación de consola desarrollada en Java que implementa un sistema CRUD completo con persistencia en una base de datos relacional mediante JDBC puro.
 
-Este sistema consiste en una aplicación de consola escrita en **Java 21** para la persistencia de datos en un motor **MySQL**. Implementa una arquitectura multicapa.
-
----
-
-## Enlace
->
-> [ HACÉ CLIC ACÁ PARA VER EL VIDEO ](COPIAR_EL_LINK_DE_YOUTUBE_O_DRIVE_AQUÍ)
-
----
-
-## Integrantes del Equipo
-
-| Apellido   | Nombre   |
-| :---       | :---     |
-| Nogueira   | Pablo    |
-| Tello      | Bruno    |
+## 👥 Integrantes del Grupo de trabajo
+* Ignacio Cariaga
+* Enzo Martínez
+* Leonardo Palavecino
+* Pablo Nogueira
+* Bruno Tello
 
 ---
 
-## Requisitos Previos
-
-Antes de clonar y ejecutar la aplicación, asegúrate de contar con el siguiente entorno instalado:
-*   **Java Development Kit (JDK):** Versión 21 o superior.
-*   **Gestor de Base de Datos:** MySQL Server (disponible mediante XAMPP, WampServer o instalación nativa).
-*   **IDE Sugerido:** IntelliJ IDEA, Eclipse o Visual Studio Code (con la extensión Pack para Java).
+## 📺 Entrega y Demostración
+* **Video Demostrativo:** [👉 Enlace al Video en YouTube/Drive]
+* **Documentación Académica (PDF):** [👉 Enlace al PDF del Informe] *(O indicar si está guardado en la raíz como "Documentacion.pdf")*
 
 ---
 
-## Instalación y Despliegue Paso a Paso
+## 🛠️ Tecnologías y Arquitectura Utilizadas
+* **Lenguaje:** Java 21
+* **Persistencia:** JDBC puro + MySQL
+* **IDE Recomendado:** NetBeans
+* **Patrón de Arquitectura:** Capas bien definidas:
+  * "Entities": Modelo de dominio basado en el UML (Herencia de clase abstracta "Base").
+  * "Dao": Acceso a datos independiente empleando el patrón DAO.
+  * "Service": Lógica de negocio y reglas de validación.
+  * "Ui / Main": Interfaz de usuario interactiva por consola.
 
-Sigue estas instrucciones para levantar el entorno de desarrollo de manera local:
+---
 
-### Paso 1: Clonar el Repositorio
-Abre tu terminal y ejecuta el comando de clonación:
-```bash
-git clone [https://github.com/Blito-git/foodstore.git](https://github.com/Blito-git/foodstore.git)
-cd foodstore
-Paso 2: Configurar e Importar la Base de Datos
+## 🚀 Instrucciones de Configuración e Instalación
 
-Inicia tu servidor MySQL.
+### 1. Requisitos Previos
+* Tener instalado el **Java Development Kit (JDK 21)**.
+* Tener instalado **MySQL Server** y un gestor (como MySQL Workbench o phpMyAdmin).
+* **NetBeans IDE**.
 
-Abre tu herramienta de gestión de bases de datos.
+### 2. Configuración de la Base de Datos
+Antes de ejecutar la aplicación, es necesario levantar el esquema de la base de datos:
+1. Crear una base de datos local llamada, por ejemplo, "pedidos_db".
+2. Ejecutar el archivo de script SQL provisto en el proyecto ("schema.sql") para crear las tablas ("categoria", "producto", "usuario", "pedido", "detalle_pedido") e insertar los datos de prueba.
 
-Crea un nuevo esquema vacío con el nombre exacto de: food_store.
+### 3. Configuración de la Conexión en Java
+* Modificar el archivo de configuración centralizado (clase "ConexionDB.java" en paquete "Config").
+* Asegurarse de colocar correctamente las credenciales locales:
+  * **URL:** "jdbc:mysql://localhost:3306/pedidos_db"
+  * **User:** "tu_usuario_de_mysql"
+  * **Password:** "tu_contraseña_de_mysql"
 
-Busca el archivo schema.sql (incluido en la raíz de este proyecto) y ejecútalo dentro del esquema para levantar la estructura de tablas (categorias, productos, usuarios, pedidos, detalles_pedido) y los datos de prueba preestablecidos.
+### 4. Cómo Ejecutar el Proyecto en NetBeans
+1. Abrir NetBeans IDE.
+2. Seleccionar "File" -> "Open Project..." y elegir la carpeta raíz de este repositorio.
+3. Hacer clic derecho sobre el proyecto en la barra lateral y seleccionar "Run" o presionar "F6".
 
-Paso 3: Configurar Credenciales de Conexión
+---
 
-Si tu servidor MySQL local tiene una contraseña asignada para el usuario root o utiliza un puerto diferente al 3306, edita las propiedades de conexión en el siguiente archivo:
-📁 src/resources/db.properties
-
-Properties
-db.url=jdbc:mysql://localhost:3306/food_store
-db.usuario=root
-db.password=TU_CONTRASEÑA_AQUÍ
-
-Paso 4: Compilar y Ejecutar la Aplicación
-
-Abre el proyecto completo en tu IDE, espera a que cargue el árbol de dependencias, busca el archivo ejecutable raíz en:
-📁 src/com/foodstore/Main.java
-
-Inicia el menú interactivo en la terminal del sistema.
+## 📋 Funcionalidades Principales (Backlog Completado)
+El sistema permite realizar operaciones CRUD completas bajo lógica de **Soft Delete** (Baja lógica usando el atributo "eliminado"):
+* **Épica 1: Gestión de Categorías** (Listar, Crear, Editar, Baja Lógica).
+* **Épica 2: Gestión de Productos** (Control de stock >= 0, precios válidos y asociación a categorías).
+* **Épica 3: Gestión de Usuarios** (Validación de mail único y persistencia de roles).
+* **Épica 4: Gestión de Pedidos y Detalles** (Carga de 1..N detalles usando transacciones seguras con Rollback en caso de fallas, cálculo automatizado del total mediante la interfaz "Calculable").

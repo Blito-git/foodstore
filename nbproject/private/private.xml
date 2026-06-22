@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Entities/Base.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Entities/Usuario.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Entities/Pedido.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Entities/Producto.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Entities/DetallePedido.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Entities/Categoria.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Interfaces/Calculable.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Exception/EntityNotFoundException.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Dao/IBaseDAO.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Dao/CategoriaDAO.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Dao/ProductoDAO.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Dao/PedidoDAO.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Service/CategoriaService.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Service/ProductoService.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Service/UsuarioService.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Service/PedidoService.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Main/Main.java</file>
+            <file>file:/C:/Users/ignac/OneDrive/Documentos/NetBeansProjects/integradorprog2/src/Config/ConexionDB.java</file>
+        </group>
+    </open-files>
+</project-private>
